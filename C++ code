@@ -1,0 +1,36 @@
+bool backspaceCompare(string s, string t)
+{
+    string x = "", y = "";
+
+    for (int i = 0; i < s.size(); i++)
+    {
+        if (s[i] != '#')
+        {
+
+            x += s[i];
+        }
+        else if (!x.empty())
+        {
+            x.pop_back();
+        }
+    }
+
+    for (int i = 0; i < t.size(); i++)
+    {
+        if (t[i] != '#')
+        {
+
+            y += t[i];
+        }
+        else if (!y.empty())
+        {
+            y.pop_back();
+        }
+    }
+
+    if (x == y)
+    {
+        return true;
+    }
+    return false;
+}
